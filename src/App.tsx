@@ -104,13 +104,6 @@ function App() {
 
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent mb-2">
-            Guitar Learning Studio
-          </h1>
-          <p className="text-white/60 text-lg">Master chord progressions with real-time guidance</p>
-        </div>
 
         {!currentProgression ? (
           /* Empty state - no progression */
@@ -127,6 +120,7 @@ function App() {
                   onClick={() => setShowStrummingSelector(true)} 
                   label="Edit Pattern"
                   className="text-sm"
+                  variant="secondary"
                 />
               </div>
               <StrummingPattern 
@@ -144,6 +138,7 @@ function App() {
                   onClick={() => setShowChordSelector(true)} 
                   label="Edit Chords"
                   className="text-sm"
+                  variant="ghost"
                 />
               </div>
               <ChordCarousel 
