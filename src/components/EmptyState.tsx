@@ -15,7 +15,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ type, onAdd }) => {
           icon: <Music className="w-16 h-16 text-white/40" />,
           title: 'No Chord Progressions',
           description: 'Create your first chord progression to start learning',
-          buttonLabel: 'Add Progression'
+          buttonLabel: 'Add Progression',
         };
       case 'strumming':
         return {
@@ -44,7 +44,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ type, onAdd }) => {
         </div>
         <h3 className="text-xl font-bold text-white mb-2">{content.title}</h3>
         <p className="text-white/60 mb-6">{content.description}</p>
-        <AddButton onClick={onAdd} label={content.buttonLabel} />
+        <AddButton onClick={onAdd} label={content.buttonLabel} variant='primary' />
       </div>
     </div>
   );
