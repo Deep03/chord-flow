@@ -1,11 +1,7 @@
 import React from 'react';
 import ChordCard from './ChordCard';
 
-interface Chord {
-  name: string;
-  diagram: string;
-  fingers: string[];
-}
+import type { Chord } from '../types';
 
 interface ChordCarouselProps {
   chords: Chord[];

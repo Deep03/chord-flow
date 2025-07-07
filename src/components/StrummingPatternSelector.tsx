@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Plus, Minus, Play, ArrowDown, ArrowUp } from 'lucide-react';
+import { X, Minus, ArrowDown, ArrowUp } from 'lucide-react';
 import { STRUMMING_PATTERNS } from '../data/chords';
 
 interface StrummingPatternSelectorProps {
