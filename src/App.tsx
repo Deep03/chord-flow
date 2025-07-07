@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import StrummingPattern from './components/StrummingPattern';
 import ChordCarousel from './components/ChordCarousel';
 import NavigationControls from './components/NavigationControls';
@@ -22,6 +22,26 @@ function App() {
   const [showProgressionCreator, setShowProgressionCreator] = useState(false);
   const [showChordSelector, setShowChordSelector] = useState(false);
   const [showStrummingSelector, setShowStrummingSelector] = useState(false);
+
+
+  useEffect(() => {
+    const savedChordProgression = localStorage.getItem('chord_progression');
+    const savedStrummingPattern = localStorage.getItem('strumming_pattern');
+
+    if (savedChordProgression) {
+      const savedChordProgressionNotNull = JSON.parse(savedChordProgression);
+      setCurrentProgression(savedChordProgressionNotNull);
+    }
+
+    if (savedStrummingPattern) {
+      const savedStrummingPatternNotNull = JSON.parse(savedStrummingPattern);
+      if (savedChordProgression) 
+      setCurrentProgression({
+        ...JSON.parse(savedChordProgression),
+        strummingPattern: savedStrummingPatternNotNull
+      });
+    }
+  }, []);
 
   // Simulate beat progression
   useEffect(() => {
@@ -89,6 +109,7 @@ function App() {
         ...currentProgression,
         strummingPattern: pattern
       });
+      localStorage.setItem('strumming_pattern', JSON.stringify(pattern))
       setCurrentBeat(0);
     }
   };
