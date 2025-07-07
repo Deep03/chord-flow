@@ -26,6 +26,7 @@ const ProgressionCreator: React.FC<ProgressionCreatorProps> = ({
         strummingPattern: ['D', 'D', 'U', 'U', 'D', 'U'], // Default pattern
         createdAt: new Date()
       };
+      localStorage.setItem('chord_progression', JSON.stringify(progression));
       onSave(progression);
       onClose();
     }
